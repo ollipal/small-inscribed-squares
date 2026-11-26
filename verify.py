@@ -17,7 +17,7 @@ all choices finds them all.  All arithmetic is in exact fractions, so there is
 no rounding and nothing is missed or invented.
 
     python3 verify.py               check every claim in the README (a few seconds)
-    python3 verify.py --slow        also the 62-corner loop (about ten minutes)
+    python3 verify.py --slow        also the 26- and 31-corner loops (about two minutes)
     python3 verify.py "0,0;4,0;4,3;0,3"      list the squares of your own polygon
 """
 import os
@@ -158,10 +158,13 @@ RING_LOOPS = [  # (name, corners, centre of the ring)
     ("pentagon", PENTAGON, "16/3,16/3"),
     ("8 corners", "-2,7;4,12;13,0;16,17;6,19;7,26;-1,21;-3,14", "49/5,129/10"),
     ("12 corners", "43,47;82,28;100,52;87,71;76,81;63,84;42,77;20,91;14,80;12,49;16,38;35,25", "641/10,3059/50"),
-    ("16 corners", "63,84;56,78;51,73;50,68;24,63;18,78;17,74;17,58;24,33;27,28;52,11;87,8;58,42;77,37;126,45;85,97",
-     "391/5,316/5"),
+    ("16 corners", open(os.path.join(HERE, "data", "ring16.txt")).read().strip(), "-18/5,-4/5"),
+    ("20 corners", open(os.path.join(HERE, "data", "ring20.txt")).read().strip(), "2/5,1/5"),
 ]
-RING_62 = ("62 corners", open(os.path.join(HERE, "data", "ring62.txt")).read().strip(), "-93694,137563")
+RING_SLOW = [
+    ("26 corners", open(os.path.join(HERE, "data", "ring26.txt")).read().strip(), "1/10,1/10"),
+    ("31 corners", open(os.path.join(HERE, "data", "ring31.txt")).read().strip(), "-25534433/10,8917955"),
+]
 
 failures = []
 
@@ -195,7 +198,7 @@ def check_ring(name, corners, centre):
     check(not undecided, f"{len(squares)} inscribed square(s), all found")
     check(side2 < 2 * r2, f"largest square {float(side2) ** 0.5:.4f} is below the promised "
                           f"sqrt2 x inner radius = {float(2 * r2) ** 0.5:.4f}")
-    print(f"        ring ratio outer/inner = {float(R2 / r2) ** 0.5:.5f}     (Matschke's limit is 2.41421)")
+    print(f"        ring ratio outer/inner = {float(R2 / r2) ** 0.5:.7f}     (Matschke's limit is 2.4142136)")
 
 
 def main(args):
@@ -218,7 +221,7 @@ def main(args):
                                   f"(circle radius {float(r2) ** 0.5:.4f}; ratio {float(squares[0][0] / r2) ** 0.5:.4f})")
     for m in (20, 40, 80, 100, 1000):
         check_rooms(m)
-    for loop in RING_LOOPS + ([RING_62] if "--slow" in args else []):
+    for loop in RING_LOOPS + (RING_SLOW if "--slow" in args else []):
         check_ring(*loop)
     print("\nALL CHECKS PASSED" if not failures else f"\n{len(failures)} CHECK(S) FAILED")
     sys.exit(1 if failures else 0)

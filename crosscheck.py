@@ -11,7 +11,7 @@ and compares with verify.py: the number of squares and the exact largest side mu
     python3 crosscheck.py Toeplitz.-Round-peg/code          # about four minutes
 
 Agreement was confirmed at commit a529b5e of that repository. Add --slow to include the
-62-corner loop (about 15 minutes; largest square only, the full census would take hours).
+26- and 31-corner loops (largest square only, the full census would take much longer).
 """
 import os
 import sys
@@ -26,7 +26,7 @@ from big_peg_exact_v243 import maximum_square, contained_disk  # noqa: E402
 cases = [("pentagon", verify.polygon(verify.PENTAGON), (F(16, 3), F(16, 3)), F(32, 9))]
 for m in (20, 40, 80, 100, 171, 1000):
     cases.append((f"three rooms, m = {m}", verify.rooms(m), (F(3 * m), F(-4 * m)), F(4 * m * m)))
-for name, corners, centre in verify.RING_LOOPS[1:] + ([verify.RING_62] if "--slow" in sys.argv else []):
+for name, corners, centre in verify.RING_LOOPS[1:] + (verify.RING_SLOW if "--slow" in sys.argv else []):
     V, c = verify.polygon(corners), verify.polygon(centre)[0]
     cases.append((f"ring loop, {name}", V, c, verify.inner_radius_squared(V, c)))
 
@@ -35,7 +35,7 @@ for name, V, centre, radius_squared in cases:
     ours, undecided = verify.inscribed_squares(V)
     P = tuple(pt(x, y) for x, y in V)
     same_largest = maximum_square(P).side_squared == ours[0][0]
-    same_count = len(V) > 20 or census_polygon(P).count == len(ours)   # census skipped on the 62-gon
+    same_count = len(V) > 20 or census_polygon(P).count == len(ours)   # census skipped on the larger loops
     disc = contained_disk(P, pt(*centre), radius_squared)
     agree = same_largest and same_count and disc and not undecided
     all_agree &= agree

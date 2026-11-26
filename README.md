@@ -88,14 +88,26 @@ More corners get closer to his limit:
 | 5 (see the appendix) | 3.162 | 1 |
 | 8 | 2.606 | 1 |
 | 12 | 2.434 | 1 |
-| 16 | 2.424 | 7 |
-| 62 | 2.4144 | 11 |
-| Matschke's theorem | holds up to 2.4142 | |
+| 16 | 2.41439 | 3 |
+| 20 | 2.41427 | 5 |
+| 26 | 2.414235 | 3 |
+| 31 | 2.4142253 | 3 |
+| Matschke's theorem | holds up to 2.4142136 | |
 
-So his constant is the true limit to within 0.0002. The ratio fell steadily as
-corners were added, and the search was still improving when it stopped. It looks
-as if more complicated shapes can come as close to 2.4142 as you like, which
-would make his number exactly right. We have not proved that.
+![A 16-cornered loop in a ring of ratio 2.41439, with its three inscribed squares](figures/ring16.svg)
+
+That is the 16-cornered one, with its three inscribed squares, all too small.
+
+So his constant is the true limit to within 0.00002. An earlier version of this
+page needed a 62-cornered loop to reach 2.4144; a finer search showed that 16
+corners already do better.
+
+The best loops all work the same way. They touch the inner circle in two places
+and the outer circle in two places, exactly where the critical square in
+Matschke's own proof has its corners, and keep clear of both circles everywhere
+else. Following that pattern with more and more short edges gives loops whose
+ratio gets closer and closer to his limit in our calculations. It looks as if
+his number is exactly right. We have not proved that.
 
 ## A conjecture: what does control the size
 
@@ -151,8 +163,8 @@ largest root. Those roots are located exactly; the largest is below 171.
 Python 3, nothing to install.
 
 ```sh
-python3 verify.py            # every claim above except the two below, ~10 s
-python3 verify.py --slow     # also the 62-cornered loop, ~10 min
+python3 verify.py            # every claim above except the two below, ~20 s
+python3 verify.py --slow     # also the 26- and 31-cornered loops, ~2 min
 python3 verify_all_m.py data/rooms13.txt --centre 3,-4,0,0 --radius 2 --side 37
                              # result 1 for every m from 171 up, ~3 min
 python3 verify.py "0,0;7,0;3,5"      # the squares of your own polygon
@@ -162,7 +174,7 @@ python3 verify.py "0,0;7,0;3,5"      # the squares of your own polygon
 
 **Checked with someone else's code.** [B. J. Schulz's repository](https://github.com/HiroSakuraba/Toeplitz.-Round-peg)
 has two exact programs written independently of this one. Run on the pentagon,
-the three-room polygon at six sizes, and the 8-, 12- and 16-cornered loops, they
+the three-room polygon at six sizes, and the 8-, 12-, 16- and 20-cornered loops, they
 give the same number of squares and exactly the same largest side.
 
 ```sh
@@ -170,8 +182,8 @@ git clone https://github.com/HiroSakuraba/Toeplitz.-Round-peg
 python3 crosscheck.py Toeplitz.-Round-peg/code      # ~4 min
 ```
 
-For the 62-cornered loop his largest-square program gives the same answer too
-(`--slow`, ~15 min). Only the all-`m` calculation rests on the program here alone.
+For the 26- and 31-cornered loops his largest-square program gives the same
+answer too (`--slow`, ~10 min). Only the all-`m` calculation rests on the program here alone.
 
 | File | |
 |---|---|

@@ -167,21 +167,23 @@ def doorways():
     fig.save("doorways")
 
 
-def ring():
-    name, corners, centre = verify.RING_LOOPS[2]
+def ring(index, name):
+    """A ring example with its two circles and all its inscribed squares."""
+    _, corners, centre = verify.RING_LOOPS[index]
     V, c = verify.polygon(corners), verify.polygon(centre)[0]
     r, R = root(verify.inner_radius_squared(V, c)), root(verify.outer_radius_squared(V, c))
     fig = Figure(560)
     p = fig.panel((230, 10, 540), (float(c[0]) - R * 1.04, float(c[1]) - R * 1.04, float(c[0]) + R * 1.04, float(c[1]) + R * 1.04))
     p.circle(c, r, "disc")
     p.circle(c, R, "outer")
-    p.polygon(verify.inscribed_squares(V)[0][0][1], "square")
+    for _, square in verify.inscribed_squares(V)[0]:
+        p.polygon(square, "square")
     p.polygon(V, "curve")
     for v in V:
         p.circle(v, 6, "dot", on_page=True)
-    fig.save("ring12", 8.5)
+    fig.save(name, 8.5)
 
 
 if __name__ == "__main__":
-    pentagon(); rooms(); doorways(); ring()
+    pentagon(); rooms(); doorways(); ring(2, "ring12"); ring(3, "ring16")
     print("figures written")

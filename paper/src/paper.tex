@@ -28,7 +28,7 @@ Schwartz, which asked for an inscribed square of size
 bounded below in terms of the inradius. Matschke's annulus theorem says that a
 closed curve winding once around an annulus of inner radius $1$ and outer radius
 $1+\sqrt2$ has an inscribed square of side at least $\sqrt2$; we show that the
-outer radius cannot be increased beyond $2.4144$.
+outer radius cannot be increased beyond $2.41423$.
 Both results are finite computations in exact rational arithmetic, and the
 programs are short and public.
 \end{abstract}
@@ -87,12 +87,12 @@ least $\sqrt2$, and remarked~\cite[Remark~2.6]{matschke} that for any
 $\rho>1+\sqrt2$ it is open whether this holds for $A_\rho$.
 
 \begin{theorem}\label{thm:ring}
-For every $\rho\ge 2.4144$ there is a simple polygon in $A_\rho$, winding once
+For every $\rho\ge 2.41423$ there is a simple polygon in $A_\rho$, winding once
 around the origin, all of whose inscribed squares have side less than $\sqrt2$.
 \end{theorem}
 
 Since $1+\sqrt2=2.41421\ldots$, the constant in Matschke's theorem is optimal to
-within $2\cdot10^{-4}$, and the examples suggest that it is exactly optimal
+within $2\cdot10^{-5}$, and the examples suggest that it is exactly optimal
 (Section~4).
 
 \paragraph{Earlier work.} The stronger guess that the bound is $\sqrt2$ times
@@ -201,8 +201,10 @@ corners&centre $c$&$r$&largest side&$\sqrt2\,r$&$R/r$\\\midrule
 5&$(16/3,\,16/3)$&$1.8856$&$2.5686$&$2.6667$&$3.1623$\\
 8&$(49/5,\,129/10)$&$5.1800$&$7.2801$&$7.3256$&$2.6062$\\
 12&$(641/10,\,3059/50)$&$21.9883$&$31.0644$&$31.0961$&$2.4340$\\
-16&$(391/5,\,316/5)$&$25.6400$&$36.1146$&$36.2604$&$2.4238$\\
-62&$(-93694,\,137563)$&$233986.0$&$329076.9$&$330906.2$&$2.41440$\\\bottomrule
+16&$(-18/5,\,-4/5)$&$29998.5$&$42150.0$&$42424.3$&$2.41439$\\
+20&$(2/5,\,1/5)$&$100000.1$&$141070.8$&$141421.4$&$2.41427$\\
+26&$(1/10,\,1/10)$&$299999.8$&$422040.0$&$424263.8$&$2.414235$\\
+31&$(-2553443.3,\,8917955)$&$20271425.1$&$28371009.1$&$28668124.3$&$2.4142253$\\\bottomrule
 \end{tabular}
 \caption{Polygons violating the conclusion of Matschke's theorem in wider annuli.
 The pentagon is that of Appendix~A; the others are listed in
@@ -216,29 +218,47 @@ $(20,91)$, $(14,80)$, $(12,49)$, $(16,38)$, $(35,25)$. Its only inscribed square
 has side $\sqrt{965}$.}
 \end{figure}
 
+\begin{figure}[H]\centering\input{fig_ring16}
+\caption{The $16$-gon of Table~\ref{tab:ring}, of ratio $2.41439$, with its three
+inscribed squares. It touches the inner circle in two places and the outer
+circle in two places and keeps clear of both elsewhere. Its corners are in
+\texttt{data/ring16.txt}.}
+\end{figure}
+
 \begin{proof}[Proof of Theorem~\ref{thm:ring}]
 The last row of Table~\ref{tab:ring}, verified by \texttt{verify.py --slow}:
-the $62$-gon has eleven inscribed squares, the largest of side
-$1.40640\,r<\sqrt2\,r$, and $R/r<2.41440$.
+the $31$-gon has three inscribed squares, the largest of side
+$1.39956\,r<\sqrt2\,r$, and $R/r<2.41423$.
 \end{proof}
 
-The ratio fell steadily as corners were added (Table~\ref{tab:ring}), and the
-search that produced the $62$-gon was still improving when it was stopped. We
-expect that more complicated polygons come arbitrarily close to $1+\sqrt2$, which
+The ratio falls quickly as corners are added (Table~\ref{tab:ring}). An earlier
+version of this paper used a $62$-gon of ratio $2.41440$; a search with finer
+steps found that $16$ corners already do better. The extremal polygons have a
+common shape. Matschke's proof uses the squares with two neighbouring corners on
+the inner circle and the other two as far out as possible, at distance
+$1+\sqrt2$; the polygons touch the inner circle near the first pair of corners
+and the outer circle near the second, and stay clear of both elsewhere.
+
+Replacing each of the four contact regions by $m$ short edges following a circle
+about the centre gives polygons with $25+4m$ sides and ratio $1+\sqrt2+\varepsilon$.
+Numerically the smallest admissible $\varepsilon$ is about $0.012/m^2$ for $m$ up
+to $96$; the members with $57$, $73$ and $89$ sides were confirmed exactly, with
+ratios $2.41432$, $2.41428$ and $2.41427$. These are not in the repository. We
+therefore expect that polygons come arbitrarily close to $1+\sqrt2$, which
 would make Matschke's constant exactly optimal, but we have not proved this.
 Simple examples already exist a little further out: the $8$-gon
 $(-2,7)$, $(4,12)$, $(13,0)$, $(16,17)$, $(6,19)$, $(7,26)$, $(-1,21)$, $(-3,14)$
 has a single inscribed square, with corners at four of its own corners and side
 $\sqrt{53}$, in an annulus of ratio exactly $13.5/5.18$. The range
-$1+\sqrt2<\rho<2.4144$ remains open.
+$1+\sqrt2<\rho<2.41423$ remains open.
 
 \section{Reproducing the results}
 
 Everything needs only Python~3.
 \begin{center}\small
 \begin{tabular}{ll}
-\texttt{python3 verify.py}&all claims except the two below (ten seconds)\\
-\texttt{python3 verify.py --slow}&also the $62$-gon (ten minutes)\\
+\texttt{python3 verify.py}&all claims except the two below (twenty seconds)\\
+\texttt{python3 verify.py --slow}&also the $26$- and $31$-gons (two minutes)\\
 \texttt{python3 verify\_all\_m.py data/rooms13.txt}&\\
 \qquad\texttt{--centre 3,-4,0,0 --radius 2 --side 37}&Theorem~\ref{thm:rooms} for all $m\ge171$ (3 min)
 \end{tabular}
@@ -250,11 +270,11 @@ programs written independently of ours: one finds the largest inscribed square o
 a rational polygon by a different method (maximising over a two-parameter
 polytope for each choice of sides), the other lists every inscribed square. We
 ran both, at commit \texttt{a529b5e}, on the pentagon, on $P(m)$ for
-$m\in\{20,40,80,100,171,1000\}$ and on the $8$-, $12$- and $16$-gons of
+$m\in\{20,40,80,100,171,1000\}$ and on the $8$-, $12$-, $16$- and $20$-gons of
 Table~\ref{tab:ring}. In every case the number of squares and the exact largest
 side agree with ours, and the inscribed disc is confirmed.
-For the $62$-gon the first of the two programs was run and gives the same largest
-side. \texttt{crosscheck.py} repeats all of this. Only the symbolic computation
+For the $26$- and $31$-gons the first of the two programs was run and gives the
+same largest side. \texttt{crosscheck.py} repeats all of this. Only the symbolic computation
 for all $m\ge171$ rests on our own program alone.
 
 \appendix
