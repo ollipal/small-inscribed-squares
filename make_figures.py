@@ -185,5 +185,5 @@ def ring(index, name):
 
 
 if __name__ == "__main__":
-    pentagon(); rooms(); doorways(); ring(2, "ring12"); ring(3, "ring16")
+    pentagon(); rooms(); doorways(); ring(2, "ring12")
     print("figures written")

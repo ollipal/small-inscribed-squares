@@ -94,10 +94,6 @@ More corners get closer to his limit:
 | 31 | 2.4142253 | 3 |
 | Matschke's theorem | holds up to 2.4142136 | |
 
-![A 16-cornered loop in a ring of ratio 2.41439, with its three inscribed squares](figures/ring16.svg)
-
-That is the 16-cornered one, with its three inscribed squares, all too small.
-
 So his constant is the true limit to within 0.00002. An earlier version of this
 page needed a 62-cornered loop to reach 2.4144; a finer search showed that 16
 corners already do better.
