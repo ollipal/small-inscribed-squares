@@ -5,7 +5,9 @@ on it that form a square? Nobody knows. The question was asked in 1911 and is
 settled for smooth loops and for polygons, but not for arbitrary ones.
 
 This repository contains two small results about how *large* such a square has
-to be, each proved by a short exact computation that you can run yourself.
+to be, each proved by a short exact computation that you can run yourself. It
+also contains one conjecture that grew out of them, about what the size of the
+square does depend on.
 
 > **A note on where this comes from.** I am a software developer with an
 > interest in mathematics, not a mathematician. These results were obtained by
@@ -17,8 +19,10 @@ to be, each proved by a short exact computation that you can run yourself.
 > nowhere, so that others need not spend time or compute rediscovering that. If
 > you find an error, please open an issue.
 
-The paper is [paper/paper.pdf](paper/paper.pdf). What follows is the same story
-in plain words.
+The paper with the two results is [paper/paper.pdf](paper/paper.pdf). The
+conjecture has a short paper of its own,
+[paper/conjecture.pdf](paper/conjecture.pdf). What follows is the same story in
+plain words.
 
 ## Why the size of the square matters
 
@@ -93,6 +97,42 @@ corners were added, and the search was still improving when it stopped. It looks
 as if more complicated shapes can come as close to 2.4142 as you like, which
 would make his number exactly right. We have not proved that.
 
+## A conjecture: what does control the size
+
+This part is a guess, not a result. It has its own short paper,
+[paper/conjecture.pdf](paper/conjecture.pdf).
+
+Result 1 says the biggest ball inside a shape tells you nothing about its
+squares. So what does? Roll a ball around inside the shape. A small ball can go
+everywhere. A bigger one gets trapped in a room, because the doorway is too
+narrow. Call the radius of the biggest ball that is not yet trapped r*. For a
+shape with no doorway, r* is just the biggest ball that fits.
+
+![Two rooms and a corridor: the largest balls that fit, the largest ball that is not trapped, and the largest square](figures/trapped_ball.svg)
+
+```
+Conjecture. Every simple polygon has an inscribed square
+            of side at least √2 · r*.
+```
+
+√2 is the value for a circle. Put the other way round: the only way to make all
+the inscribed squares of a shape small would be to give it a narrow doorway.
+
+- It holds for every polygon we tried. That includes the three-room polygons of
+  Result 1, whose ball gets trapped at the tiny doorway, and every earlier
+  example we know of whose squares are small compared with the ball that fits
+  inside.
+- Direct computer searches for a counterexample went through more than seven
+  million polygons. The smallest ratio they reached was 1.4142, which is √2 to
+  four decimal places.
+
+It is not proved, and a search that finds nothing is not a proof. As far as we
+know the statement is new.
+
+```
+python3 trapped_ball.py      # the table in that paper, ~15 s
+```
+
 ## How the squares are found
 
 A square is fixed by one corner `p` and one side `v`: four numbers. Pick four
@@ -138,9 +178,11 @@ For the 62-cornered loop his largest-square program gives the same answer too
 | `verify.py` | finds every inscribed square of a polygon, exactly; checks the claims |
 | `verify_all_m.py` | the same with `m` symbolic |
 | `crosscheck.py` | compares with B. J. Schulz's independent programs |
+| `trapped_ball.py` | the numbers behind the conjecture |
 | `make_figures.py` | draws the figures from the exact data |
 | `data/` | the polygons |
 | `paper/paper.pdf` | the paper |
+| `paper/conjecture.pdf` | the conjecture, what was tried, and where it is weak |
 | `paper/src/` | its LaTeX source and figures; `build.sh` renders it |
 
 ## How this came about
@@ -192,12 +234,25 @@ also the first row of the table above.
 
 ## Citing
 
+The two results:
+
 ```bibtex
 @misc{paloviita2026squares,
   author = {Olli Paloviita},
   title  = {Inscribed squares can be small: a counterexample to the big peg conjecture},
   year   = {2026},
   url    = {https://github.com/ollipal/small-inscribed-squares}
+}
+```
+
+The conjecture:
+
+```bibtex
+@misc{paloviita2026trapped,
+  author = {Olli Paloviita},
+  title  = {The trapped ball: a conjecture on the size of inscribed squares},
+  year   = {2026},
+  url    = {https://github.com/ollipal/small-inscribed-squares/blob/main/paper/conjecture.pdf}
 }
 ```
 

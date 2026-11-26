@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Paloviita
     given-names: Olli
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-11-26
 url: "https://github.com/ollipal/small-inscribed-squares"
 repository-code: "https://github.com/ollipal/small-inscribed-squares"
@@ -14,4 +14,14 @@ abstract: >-
   A family of 13-gons containing a disc of radius 2m whose only inscribed square has side
   below 37 for every m >= 171, disproving the folklore big peg conjecture, and polygons showing that the outer
   radius in Matschke's annulus theorem cannot exceed 2.4144. Verified in exact arithmetic.
+  Also a conjecture: every simple polygon has an inscribed square of side at least sqrt(2) r*,
+  where r* is the radius of the largest disc that is not trapped inside the polygon.
 keywords: [inscribed square problem, square peg problem, Toeplitz conjecture, counterexample, computational geometry]
+references:
+  - type: article
+    title: "The trapped ball: a conjecture on the size of inscribed squares"
+    authors:
+      - family-names: Paloviita
+        given-names: Olli
+    year: 2026
+    url: "https://github.com/ollipal/small-inscribed-squares/blob/main/paper/conjecture.pdf"
