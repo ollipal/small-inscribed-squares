@@ -23,8 +23,8 @@
 \begin{abstract}
 A square is inscribed in a closed curve if its four corners lie on the curve.
 We give a family of $13$-gons that contain a disc of radius $2m$ but whose only
-inscribed square has side less than $37$, for every $m\ge171$. This disproves the
-big peg conjecture of Schwartz, which asked for an inscribed square of size
+inscribed square has side less than $37$, for every $m\ge171$. This disproves the big peg conjecture, a folklore conjecture recorded by
+Schwartz, which asked for an inscribed square of size
 bounded below in terms of the inradius. Matschke's annulus theorem says that a
 closed curve winding once around an annulus of inner radius $1$ and outer radius
 $1+\sqrt2$ has an inscribed square of side at least $\sqrt2$; we show that the
@@ -50,8 +50,8 @@ general. A natural plan is to approximate a curve by polygons and pass to the
 limit; it fails only because the squares of the approximating polygons might
 shrink to a point. Matschke's survey~\cite{matschke-survey} makes this explicit:
 it would suffice that a piecewise linear curve containing a disc of radius $r$
-inscribes a square of side at least $\varepsilon r$. Schwartz~\cite{schwartz}
-stated it as a conjecture. Call a polygon \emph{wide} if the bounded component
+inscribes a square of side at least $\varepsilon r$. This is a folklore conjecture of long standing. Schwartz~\cite{schwartz}, who
+informs us that it is not due to him, records it as follows. Call a polygon \emph{wide} if the bounded component
 of its complement contains a disc of radius~$1$.
 
 \begin{quote}
@@ -96,14 +96,19 @@ within $2\cdot10^{-4}$, and the examples suggest that it is exactly optimal
 (Section~4).
 
 \paragraph{Earlier work.} The stronger guess that the bound is $\sqrt2$ times
-the inradius, as for a circle, was posed as a challenge by D.~Bernier and
+the inradius, as for a circle, was first refuted by Z.~Szab\'o and
+R.~E.~Schwartz in May and June 2026, in unpublished correspondence with
+J.~Greene and A.~Lobb~\cite{ss}: polygons with $5$ to $9$ sides whose largest
+inscribed square has side down to about $1.135$ times the inradius, and an
+explicit family of pentagons with limiting ratio $(2+\sqrt2)/3\approx1.138$.
+That correspondence asks whether the ratio can tend to zero and leaves it open.
+Independently, the same guess was posed as a challenge by D.~Bernier and
 refuted by G.~Pochuev~\cite{pochuev} in August 2026 with a $10$-gon of ratio
-$1.4104$; see Appendix~A and also~\cite{schulz}.
+$1.4104$, verified by exhaustive enumeration; see Appendix~A and also~\cite{schulz}.
 Schulz's research log~\cite{schulz} improves that ratio to $1.4084$, proves a
 bound of this kind for several families of polygons, and names the existence of
 some universal positive constant as the remaining question; Theorem~\ref{thm:rooms}
-answers it in the negative. We are not aware of an earlier counterexample to the
-conjecture as Schwartz states it, nor of an answer to Matschke's remark, but this
+answers it in the negative. We are not aware of an earlier counterexample to the conjecture as stated above, nor of an answer to Matschke's remark, but this
 is an active area and we may have missed one.
 
 \section{Method}
@@ -256,14 +261,14 @@ for all $m\ge171$ rests on our own program alone.
 \section{A small example below $\sqrt2$}
 
 For a circle the inscribed square has side $\sqrt2$ times the radius, and one
-might guess that $\sqrt2$ times the inradius is always attained. Pochuev~\cite{pochuev}
-showed that it is not: his $10$-gon has ratio $1.4104$, with every inscribed
-square listed by exhaustive enumeration. That was the first counterexample of
-this kind. The pentagon below is a smaller
-instance of the same fact. We include it because it can be checked by hand and
+might guess that $\sqrt2$ times the inradius is always attained. It is not. The first examples are due to Szab\'o and Schwartz~\cite{ss}, whose
+pentagons reach a ratio near $1.138$; Pochuev~\cite{pochuev} independently gave a
+$10$-gon of ratio $1.4104$, with every inscribed
+square listed by exhaustive enumeration. The pentagon below is a weaker
+instance of the same fact, with integer corners. We include it because it can be checked by hand and
 because it is the first row of Table~\ref{tab:ring}.
 
-\begin{proposition}[after Pochuev]\label{prop:pentagon}
+\begin{proposition}[after Szab\'o--Schwartz and Pochuev]\label{prop:pentagon}
 The pentagon $(1,2),(3,5),(8,0),(7,7),(0,8)$ contains the disc of radius
 $\tfrac43\sqrt2$ about $(\tfrac{16}3,\tfrac{16}3)$ and has exactly one inscribed
 square, of side $\sqrt{18911250}/1693\approx2.5686$. The ratio of the two is
@@ -288,6 +293,10 @@ $\sqrt2$, in line with the $\sqrt2$ bound for convex curves (C.~Boilley, 2026; s
 \url{https://github.com/Grisha-Pochuev/sharp-big-peg-counterexample}.
 \bibitem{schulz} B.~J.~Schulz, \emph{Toeplitz square-peg research}, software repository (2026),
 \url{https://github.com/HiroSakuraba/Toeplitz.-Round-peg}.
+\bibitem{ss} R.~E.~Schwartz and Z.~Szab\'o, with J.~Greene and A.~Lobb,
+correspondence of 31 May -- 2 June 2026, communicated by R.~E.~Schwartz,
+26 November 2026, and cited with his permission.
+
 \bibitem{schwartz} R.~E.~Schwartz, Rectangles, curves, and Klein bottles,
 \emph{Bull.\ Amer.\ Math.\ Soc.} \textbf{59} (2022), 1--17.
 \end{thebibliography}

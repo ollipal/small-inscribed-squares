@@ -25,8 +25,9 @@ in plain words.
 Any loop can be approximated by polygons, and every polygon has an inscribed
 square. So the general problem would be solved if those squares could not shrink
 to nothing as the polygons close in on the loop. A natural hope: a polygon with
-room for a big circle inside must also have a big inscribed square. Richard
-Schwartz stated this as the *big peg conjecture* (2022):
+room for a big circle inside must also have a big inscribed square. This is an old
+folklore conjecture. Richard Schwartz's 2022 survey records it as the *big peg
+conjecture*:
 
 > There is some ε₀ > 0 such that every polygon containing a disc of radius 1 has
 > an inscribed square of side at least ε₀.
@@ -153,11 +154,16 @@ check is here.
 
 ## Credit
 
-- The questions: R. E. Schwartz, *Rectangles, curves, and Klein bottles*, Bull.
-  AMS 59 (2022), Conjecture 3.5; B. Matschke, *On the square peg problem and its
+- The questions: the size conjecture is folklore and not due to any one person; it is
+  stated in R. E. Schwartz, *Rectangles, curves, and Klein bottles*, Bull.
+  AMS 59 (2022), Conjecture 3.5. Also B. Matschke, *On the square peg problem and its
   relatives*, [arXiv:1001.0186](https://arxiv.org/abs/1001.0186), Theorem 1.3 and
   Remark 2.6, and his survey in Notices AMS 61 (2014).
-- The first polygon below √2: [G. Pochuev](https://github.com/Grisha-Pochuev/sharp-big-peg-counterexample)
+- The first polygons below √2: Z. Szabó and R. E. Schwartz, in correspondence
+  with J. Greene and A. Lobb in May and June 2026 (unpublished; shared by
+  Schwartz and cited with his permission). Their examples reach about 1.135
+  times the inner radius, and they ask whether the ratio can go to zero.
+- Independently: [G. Pochuev](https://github.com/Grisha-Pochuev/sharp-big-peg-counterexample)
   (2026), answering a challenge by D. Bernier, and verified by exhaustive
   enumeration as here.
 - [B. J. Schulz's research log](https://github.com/HiroSakuraba/Toeplitz.-Round-peg)
@@ -172,10 +178,10 @@ to Matschke's question, but the area is active and we may have missed one.
 ## Appendix: a known fact, with an example you can check by hand
 
 A circle's inscribed square has side √2 times the radius, so one might guess a
-polygon always has a square at least √2 times its inner circle. **Grisha Pochuev
-showed in August 2026 that this is false**, with a 10-sided polygon of ratio
-1.4104, checked by listing every inscribed square. His was the first
-counterexample of this kind.
+polygon always has a square at least √2 times its inner circle. **That is false.** Zoltán Szabó and Richard Schwartz found the first examples
+in May 2026 (unpublished), with pentagons near ratio 1.138. Grisha Pochuev
+independently published a 10-sided polygon of ratio 1.4104 in August 2026,
+checked by listing every inscribed square.
 
 The pentagon (1,2), (3,5), (8,0), (7,7), (0,8) is a smaller example of the same
 fact: one inscribed square of side 2.569, a circle of radius 1.886, ratio 1.362.

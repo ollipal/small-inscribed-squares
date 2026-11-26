@@ -12,6 +12,6 @@ repository-code: "https://github.com/ollipal/small-inscribed-squares"
 license: MIT
 abstract: >-
   A family of 13-gons containing a disc of radius 2m whose only inscribed square has side
-  below 37 for every m >= 171, disproving the big peg conjecture of Schwartz, and polygons showing that the outer
+  below 37 for every m >= 171, disproving the folklore big peg conjecture, and polygons showing that the outer
   radius in Matschke's annulus theorem cannot exceed 2.4144. Verified in exact arithmetic.
 keywords: [inscribed square problem, square peg problem, Toeplitz conjecture, counterexample, computational geometry]
