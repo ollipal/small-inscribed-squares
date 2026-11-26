@@ -136,7 +136,7 @@ def trapped_radius(V, details=False):
 def report(name, text):
     exact = verify.polygon(text)
     squares, undecided = verify.inscribed_squares(exact)
-    side = math.sqrt(squares[-1][0])
+    side = math.sqrt(squares[0][0])                 # verify.py lists the largest first
     V = [(float(x), float(y)) for x, y in exact]
     rho, rstar = trapped_radius(V)
     note = "never trapped" if rstar >= rho * (1 - 1e-9) else "trapped"
@@ -164,8 +164,8 @@ SHAPES = [
 
 
 def figure(path):
-    """Draws the dumbbell with its largest ball, its trapped ball and its
-    largest inscribed square, as an SVG file."""
+    """Draws the dumbbell with its largest balls, its trapped ball, and its
+    largest and smallest inscribed squares, as an SVG file."""
     exact = verify.polygon(DUMBBELL)
     squares, _ = verify.inscribed_squares(exact)
     V = [(float(x), float(y)) for x, y in exact]
@@ -180,15 +180,17 @@ def figure(path):
 <style>.shape{{fill:#eef5f1;stroke:#1f9d6b;stroke-width:2;stroke-linejoin:round}}
 .big{{fill:none;stroke:#3d7bd9;stroke-width:1.6;stroke-dasharray:6 5}}
 .stuck{{fill:#ff9f43;fill-opacity:.35;stroke:#d97706;stroke-width:1.8}}
-.square{{fill:#d63b3b;fill-opacity:.15;stroke:#d63b3b;stroke-width:2}}
+.square{{fill:#d63b3b;fill-opacity:.12;stroke:#d63b3b;stroke-width:2}}
+.small{{fill:none;stroke:#d63b3b;stroke-width:1.5;stroke-dasharray:4 3}}
 text{{fill:#333}}</style>
 <polygon points="{pts(V)}" class="shape"/>
 {circle(p1, d1, "big")}{circle(p2, d2, "big")}
-<polygon points="{pts(squares[-1][1])}" class="square"/>
+<polygon points="{pts(squares[0][1])}" class="square"/>
+<polygon points="{pts(squares[-1][1])}" class="small"/>
 {circle(mid, rstar, "stuck")}
 <text x="20" y="328">dashed: largest balls that fit (radius {rho:.2f})</text>
 <text x="300" y="328">orange: the largest ball that is not trapped (r* = {rstar:.2f})</text>
-<text x="300" y="20">red: the largest inscribed square (side {math.sqrt(squares[-1][0]):.2f})</text>
+<text x="20" y="20">red: the largest inscribed square (side {math.sqrt(squares[0][0]):.2f}); dashed red: the smallest, at the pinch (side {math.sqrt(squares[-1][0]):.2f})</text>
 </svg>
 '''
     open(path, "w").write(svg)
@@ -200,7 +202,8 @@ text{{fill:#333}}</style>
 \\path[draw=curveC, line width=0.8pt, fill=black!4] {path_of(V)};
 \\path[draw=discC, dashed, line width=0.6pt] {xy(p1)} circle ({d1:.4f});
 \\path[draw=discC, dashed, line width=0.6pt] {xy(p2)} circle ({d2:.4f});
-\\path[draw=squareC, line width=0.8pt, fill=squareC, fill opacity=0.15] {path_of(squares[-1][1])};
+\\path[draw=squareC, line width=0.8pt, fill=squareC, fill opacity=0.12] {path_of(squares[0][1])};
+\\path[draw=squareC, dashed, line width=0.6pt] {path_of(squares[-1][1])};
 \\path[draw=looseC, line width=0.8pt, fill=looseC, fill opacity=0.3] {xy(mid)} circle ({rstar:.4f});
 \\end{{tikzpicture}}
 '''

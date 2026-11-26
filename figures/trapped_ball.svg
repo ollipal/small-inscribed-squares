@@ -2,13 +2,15 @@
 <style>.shape{fill:#eef5f1;stroke:#1f9d6b;stroke-width:2;stroke-linejoin:round}
 .big{fill:none;stroke:#3d7bd9;stroke-width:1.6;stroke-dasharray:6 5}
 .stuck{fill:#ff9f43;fill-opacity:.35;stroke:#d97706;stroke-width:1.8}
-.square{fill:#d63b3b;fill-opacity:.15;stroke:#d63b3b;stroke-width:2}
+.square{fill:#d63b3b;fill-opacity:.12;stroke:#d63b3b;stroke-width:2}
+.small{fill:none;stroke:#d63b3b;stroke-width:1.5;stroke-dasharray:4 3}
 text{fill:#333}</style>
 <polygon points="40.0,290.0 240.0,300.0 250.0,205.0 440.0,212.0 450.0,310.0 660.0,280.0 640.0,40.0 445.0,50.0 430.0,130.0 240.0,137.0 230.0,40.0 30.0,60.0" class="shape"/>
 <circle cx="539.7" cy="164.7" r="110.3" class="big"/><circle cx="142.3" cy="180.5" r="107.0" class="big"/>
-<polygon points="249.4,210.4 323.1,207.7 320.4,134.0 246.7,136.8" class="square"/>
+<polygon points="217.1,298.9 475.4,306.4 482.9,48.1 224.6,40.5" class="square"/>
+<polygon points="249.4,210.4 323.1,207.7 320.4,134.0 246.7,136.8" class="small"/>
 <circle cx="248.7" cy="170.9" r="34.2" class="stuck"/>
 <text x="20" y="328">dashed: largest balls that fit (radius 1.11)</text>
 <text x="300" y="328">orange: the largest ball that is not trapped (r* = 0.34)</text>
-<text x="300" y="20">red: the largest inscribed square (side 0.74)</text>
+<text x="20" y="20">red: the largest inscribed square (side 2.58); dashed red: the smallest, at the pinch (side 0.74)</text>
 </svg>

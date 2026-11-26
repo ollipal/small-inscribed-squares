@@ -108,7 +108,7 @@ everywhere. A bigger one gets trapped in a room, because the doorway is too
 narrow. Call the radius of the biggest ball that is not yet trapped r*. For a
 shape with no doorway, r* is just the biggest ball that fits.
 
-![Two rooms and a corridor: the largest balls that fit, the largest ball that is not trapped, and the largest square](figures/trapped_ball.svg)
+![Two rooms and a corridor: the largest balls that fit, the largest ball that is not trapped, the largest inscribed square, and the smallest one, which sits at the doorway](figures/trapped_ball.svg)
 
 ```
 Conjecture. Every simple polygon has an inscribed square
