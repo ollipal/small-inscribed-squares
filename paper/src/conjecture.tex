@@ -46,10 +46,12 @@ A square is \emph{inscribed} in a closed curve if its four corners lie on the
 curve. Every polygon has an inscribed square, and it is open whether every
 Jordan curve has one. One would like to approximate a curve by polygons and pass
 to the limit, which works as soon as the squares of the approximating polygons
-are prevented from shrinking to a point. The folklore \emph{big peg conjecture}
+are prevented from shrinking to a point; Greene and Lobb~\cite{gl} call this
+obstacle \emph{shrinkout}. The folklore \emph{big peg conjecture}
 proposed that the inradius prevents it: a polygon containing a disc of radius
-$\rho$ should have an inscribed square of side at least $\varepsilon\rho$. In
-its sharp form the constant would be $\sqrt2$, the value for a circle.
+$\rho$ should have an inscribed square of side at least $\varepsilon\rho$
+\cite{matschke-survey,schwartz}. In its sharp form, posed by
+Bernier~\cite{bernier}, the constant would be $\sqrt2$, the value for a circle.
 
 Both forms are false. Szab\'o and Schwartz~\cite{ss} found polygons with $5$ to
 $9$ sides whose largest inscribed square has side about $1.14\,\rho$, and
@@ -63,6 +65,19 @@ size of the hub. This suggests that the squares of a polygon answer not to its
 largest disc but to its narrowest doorway: that the only way to make all
 inscribed squares small is to give the polygon a narrow doorway. The next
 section makes that a number.
+
+\paragraph{Related work.} We did not find the quantity $r^*$ or
+Conjecture~\ref{conj} in the literature; the size statements we found all use
+the inradius. Two results are close in spirit. Schulz~\cite{schulz} shows that
+an inscribed square of side less than $\sqrt2\,\rho$ must have a corner hidden
+behind the convex hull of the disc and the other three corners, in a pocket of
+the curve; this constrains each small square but does not bound the largest.
+Cantarella, Denne and McCleary~\cite{cdm} bound every square inscribed in a
+curve of finite total curvature without cusps from below by a distance defined
+through the curvature of short arcs; that quantity is small as soon as the curve
+has a small bump. Proved lower bounds for the largest square are known for
+curves in an annulus (Matschke), for convex curves (see Section~\ref{sec:weak}) and
+for pairs of Lipschitz graphs (Rifford~\cite{rifford}).
 
 \section{The trapped ball}
 
@@ -123,6 +138,14 @@ touches the polygon at the four corners of a square.
 Conjecture~\ref{conj} is the sharp big peg conjecture with $\rho$ replaced by
 $r^*$. Since $r^*\le\rho$ it is weaker, and the counterexamples to the original
 do not contradict it: in each of them a disc is trapped.
+\end{remark}
+
+\begin{remark}
+A slightly stronger inequality held in every polygon we evaluated ($152$
+polygons, smallest ratio $1.000004$): $S\ge\min(\sqrt2\,\rho,\;2r^*)$. In words,
+the largest square is at least as wide as the narrowest pinch, unless
+$\sqrt2\,\rho$ is smaller. It is attained by the ring octagon of~\cite{small}
+and by a pentagon of~\cite{ss}. We did not search for counterexamples to it.
 \end{remark}
 
 \begin{remark}
@@ -193,13 +216,19 @@ unit discs with centres $c$ apart, $S/r^*$ increases with $c$ from $1.51$ to
 $6.3$, continuously through the value of $c$ at which a disc becomes trapped.
 \end{itemize}
 
-\section{What is weak}
+\subsection*{Small pinches}
+
+A thin arm that widens slightly towards its end is a pinch like any other, and
+$r^*$ takes it into account. Such pinches usually have a small inscribed square
+at them: of $344$ pinches in $200$ random polygons, $340$ had a square at least
+as wide as the pinch nearby. It is not forced: $P(40)$ has three pinches and a
+single square. Rules that disregard small pinches lose the constant $\sqrt2$:
+they fail on a pentagon of~\cite{ss}, where the two sides of the pinch are
+almost equally roomy, and on a $24$-gon found by search.
+
+\section{What is weak}\label{sec:weak}
 
 \begin{itemize}
-\item \emph{Small features count.} If a thin arm of $P$ widens even slightly
-towards its end, a disc is trapped in it, and $r^*$ is half the width of that arm
-however large the rest of $P$ is. For such a polygon the conjecture holds but
-says little. We do not know the right way to disregard features of this kind.
 \item \emph{Without a pinch it is the sharp bound for that class.} When no disc
 is trapped the conjecture says $S\ge\sqrt2\,\rho$. For convex curves this bound
 has been reported (C.~Boilley, 2026; see the research log~\cite{schulz}). For
@@ -223,16 +252,28 @@ Python~3, standard library only. The search programs are not part of the
 repository.
 
 \begin{thebibliography}{9}\small
+\bibitem{bernier} D.~Bernier, \emph{The sharp big peg conjecture}, 16 June 2026,
+\url{https://dbernier.ca/2026/06/16/the-sharp-big-peg-conjecture/}.
+\bibitem{cdm} J.~Cantarella, E.~Denne and J.~McCleary, Square-like quadrilaterals
+inscribed in embedded space curves, \href{https://arxiv.org/abs/2103.13848}{arXiv:2103.13848}.
+\bibitem{gl} J.~Greene and A.~Lobb, Floer homology and square pegs,
+\href{https://arxiv.org/abs/2404.05179}{arXiv:2404.05179}.
+\bibitem{matschke-survey} B.~Matschke, A survey on the square peg problem,
+Notices Amer.\ Math.\ Soc.\ 61 (2014), 346--352.
 \bibitem{small} O.~Paloviita, \emph{Inscribed squares can be small: a
 counterexample to the big peg conjecture} (2026),
 \url{https://github.com/ollipal/small-inscribed-squares}.
 \bibitem{pochuev} G.~Pochuev, \emph{A 10-vertex counterexample to David
 Bernier's sharp polygonal big peg conjecture} (2026),
 \url{https://github.com/Grisha-Pochuev/sharp-big-peg-counterexample}.
+\bibitem{rifford} L.~Rifford, A quantitative version of Tao's result on the
+Toeplitz square peg problem, \href{https://arxiv.org/abs/2106.01914}{arXiv:2106.01914}.
 \bibitem{schulz} B.~J.~Schulz, \emph{Toeplitz square-peg research}, software repository (2026),
 \url{https://github.com/HiroSakuraba/Toeplitz.-Round-peg}.
 \bibitem{ss} R.~E.~Schwartz and Z.~Szab\'o, with J.~Greene and A.~Lobb,
 correspondence of 31 May -- 2 June 2026, communicated by R.~E.~Schwartz,
 26 November 2026, and cited with his permission.
+\bibitem{schwartz} R.~E.~Schwartz, Rectangles, curves, and Klein bottles,
+Bull.\ Amer.\ Math.\ Soc.\ 59 (2022), 1--17.
 \end{thebibliography}
 \end{document}
