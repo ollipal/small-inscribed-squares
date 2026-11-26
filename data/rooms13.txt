@@ -1,0 +1,15 @@
+# The three-room family P(m): corner i = m*(x, y) + (dx, dy).
+# Columns: x y dx dy.  Rows with x = y = 0 are the hub and do not move with m.
+ -8   0    0    3
+  0   0   -3   -3
+ -6   0    3   -1
+ -6  -6   -2    1
+  0  -6    4   -2
+  0   0    3  -16
+  0  -7    7   -1
+  6  -8    8    2
+  6   0    5    1
+  0   0    9    0
+  0   0    0    9
+  0   6    4    1
+ -7   6   -8    1

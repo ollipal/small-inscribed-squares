@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+paper/src/*.aux
+paper/src/*.log
+paper/src/*.out
+paper/src/*.fls
+paper/src/*.fdb_latexmk
+paper/src/paper.pdf

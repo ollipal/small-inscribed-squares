@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Inscribed squares can be small: a counterexample to the big peg conjecture"
+type: software
+authors:
+  - family-names: Paloviita
+    given-names: Olli
+version: 1.0.0
+date-released: 2026-11-26
+url: "https://github.com/ollipal/small-inscribed-squares"
+repository-code: "https://github.com/ollipal/small-inscribed-squares"
+license: MIT
+abstract: >-
+  A family of 13-gons containing a disc of radius 2m whose only inscribed square has side
+  below 37 for every m >= 171, disproving the big peg conjecture of Schwartz, and polygons showing that the outer
+  radius in Matschke's annulus theorem cannot exceed 2.4144. Verified in exact arithmetic.
+keywords: [inscribed square problem, square peg problem, Toeplitz conjecture, counterexample, computational geometry]
