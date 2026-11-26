@@ -129,8 +129,8 @@ git clone https://github.com/HiroSakuraba/Toeplitz.-Round-peg
 python3 crosscheck.py Toeplitz.-Round-peg/code      # ~4 min
 ```
 
-The 62-cornered loop and the all-`m` calculation have been checked only by the
-programs here.
+For the 62-cornered loop his largest-square program gives the same answer too
+(`--slow`, ~15 min). Only the all-`m` calculation rests on the program here alone.
 
 | File | |
 |---|---|

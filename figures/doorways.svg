@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="760">
 <rect width="1000" height="480" fill="white"/>
-<clipPath id="clip3824_1"><rect x="20.0" y="10.0" width="460.0" height="460.0"/></clipPath>
-<clipPath id="clip3824_2"><rect x="530.0" y="10.0" width="460.0" height="460.0"/></clipPath>
-<g clip-path="url(#clip3824_1)"><polygon points="97.03,37.44 97.03,210.93 270.52,210.93 270.52,37.44" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
-<g clip-path="url(#clip3824_2)"><polygon points="-15.27,-507.50 -15.27,255.83 748.06,255.83 748.06,-507.50" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
-<g clip-path="url(#clip3824_2)"><circle cx="748.06" cy="255.83" r="9.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#b9770e" fill-opacity="1" /></g>
-<g clip-path="url(#clip3824_1)"><polygon points="103.19,218.17 99.20,386.00 267.03,390.00 271.03,222.16" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
-<g clip-path="url(#clip3824_2)"><polygon points="11.83,287.68 -5.75,1026.16 732.73,1043.74 750.31,305.26" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
-<g clip-path="url(#clip3824_2)"><circle cx="752.67" cy="310.37" r="9.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#b9770e" fill-opacity="1" /></g>
-<g clip-path="url(#clip3824_1)"><polygon points="283.02,406.03 458.34,402.73 455.03,227.41 279.71,230.71" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
-<g clip-path="url(#clip3824_2)"><polygon points="803.06,1114.30 1574.47,1099.75 1559.92,328.33 788.50,342.89" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
-<g clip-path="url(#clip3824_2)"><circle cx="788.50" cy="342.89" r="9.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#b9770e" fill-opacity="1" /></g>
-<g clip-path="url(#clip3824_1)"><polygon points="40.91,208.78 268.88,217.49 103.35,214.59 96.09,385.93 279.04,390.28 277.59,236.37 283.40,417.87 459.09,442.56 454.73,211.69 286.30,213.14 273.23,200.07 279.04,37.44 58.33,37.44" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" fill="none" /></g>
-<g clip-path="url(#clip3824_2)"><polygon points="-262.22,246.39 740.83,284.72 12.50,271.94 -19.44,1025.83 785.56,1045.00 779.17,367.78 804.72,1166.39 1577.78,1275.00 1558.61,259.17 817.50,265.56 760.00,208.06 785.56,-507.50 -185.56,-507.50" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" fill="none" /></g>
+<clipPath id="clip1744_1"><rect x="20.0" y="10.0" width="460.0" height="460.0"/></clipPath>
+<clipPath id="clip1744_2"><rect x="530.0" y="10.0" width="460.0" height="460.0"/></clipPath>
+<g clip-path="url(#clip1744_1)"><polygon points="97.03,37.44 97.03,210.93 270.52,210.93 270.52,37.44" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
+<g clip-path="url(#clip1744_2)"><polygon points="-15.27,-507.50 -15.27,255.83 748.06,255.83 748.06,-507.50" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
+<g clip-path="url(#clip1744_2)"><circle cx="748.06" cy="255.83" r="9.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#b9770e" fill-opacity="1" /></g>
+<g clip-path="url(#clip1744_1)"><polygon points="103.19,218.17 99.20,386.00 267.03,390.00 271.03,222.16" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
+<g clip-path="url(#clip1744_2)"><polygon points="11.83,287.68 -5.75,1026.16 732.73,1043.74 750.31,305.26" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
+<g clip-path="url(#clip1744_2)"><circle cx="752.67" cy="310.37" r="9.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#b9770e" fill-opacity="1" /></g>
+<g clip-path="url(#clip1744_1)"><polygon points="283.02,406.03 458.34,402.73 455.03,227.41 279.71,230.71" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
+<g clip-path="url(#clip1744_2)"><polygon points="803.06,1114.30 1574.47,1099.75 1559.92,328.33 788.50,342.89" stroke="#b9770e" stroke-width="1.5" stroke-linejoin="round" fill="none" stroke-dasharray="9 6" /></g>
+<g clip-path="url(#clip1744_2)"><circle cx="788.50" cy="342.89" r="9.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#b9770e" fill-opacity="1" /></g>
+<g clip-path="url(#clip1744_1)"><polygon points="40.91,208.78 268.88,217.49 103.35,214.59 96.09,385.93 279.04,390.28 277.59,236.37 283.40,417.87 459.09,442.56 454.73,211.69 286.30,213.14 273.23,200.07 279.04,37.44 58.33,37.44" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" fill="none" /></g>
+<g clip-path="url(#clip1744_2)"><polygon points="-262.22,246.39 740.83,284.72 12.50,271.94 -19.44,1025.83 785.56,1045.00 779.17,367.78 804.72,1166.39 1577.78,1275.00 1558.61,259.17 817.50,265.56 760.00,208.06 785.56,-507.50 -185.56,-507.50" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" fill="none" /></g>
 </svg>

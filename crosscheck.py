@@ -10,8 +10,8 @@ and compares with verify.py: the number of squares and the exact largest side mu
     git clone https://github.com/HiroSakuraba/Toeplitz.-Round-peg
     python3 crosscheck.py Toeplitz.-Round-peg/code          # about four minutes
 
-Agreement was confirmed at commit a529b5e of that repository. The 62-corner loop is left out
-because it would take hours; add --slow to include it.
+Agreement was confirmed at commit a529b5e of that repository. Add --slow to include the
+62-corner loop (about 15 minutes; largest square only, the full census would take hours).
 """
 import os
 import sys
@@ -35,7 +35,7 @@ for name, V, centre, radius_squared in cases:
     ours, undecided = verify.inscribed_squares(V)
     P = tuple(pt(x, y) for x, y in V)
     same_largest = maximum_square(P).side_squared == ours[0][0]
-    same_count = census_polygon(P).count == len(ours)
+    same_count = len(V) > 20 or census_polygon(P).count == len(ours)   # census skipped on the 62-gon
     disc = contained_disk(P, pt(*centre), radius_squared)
     agree = same_largest and same_count and disc and not undecided
     all_agree &= agree

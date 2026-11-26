@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="760">
 <rect width="1000" height="520" fill="white"/>
-<clipPath id="clip5168_1"><rect x="250.0" y="10.0" width="500.0" height="500.0"/></clipPath>
-<g clip-path="url(#clip5168_1)"><circle cx="575.76" cy="184.24" r="107.14" stroke="#2a7de1" stroke-width="1.2" stroke-linejoin="round" fill="#2a7de1" fill-opacity="0.12" /></g>
-<g clip-path="url(#clip5168_1)"><polygon points="442.38,204.39 463.02,59.91 318.54,39.27 297.90,183.75" stroke="#d1342f" stroke-width="1.4" stroke-linejoin="round" fill="#d1342f" fill-opacity="0.2" /></g>
-<g clip-path="url(#clip5168_1)"><polygon points="329.55,373.64 443.18,203.18 727.27,487.27 670.45,89.55 272.73,32.73" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" fill="none" /></g>
-<g clip-path="url(#clip5168_1)"><circle cx="329.55" cy="373.64" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
-<g clip-path="url(#clip5168_1)"><circle cx="443.18" cy="203.18" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
-<g clip-path="url(#clip5168_1)"><circle cx="727.27" cy="487.27" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
-<g clip-path="url(#clip5168_1)"><circle cx="670.45" cy="89.55" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
-<g clip-path="url(#clip5168_1)"><circle cx="272.73" cy="32.73" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
+<clipPath id="clip3088_1"><rect x="250.0" y="10.0" width="500.0" height="500.0"/></clipPath>
+<g clip-path="url(#clip3088_1)"><circle cx="575.76" cy="184.24" r="107.14" stroke="#2a7de1" stroke-width="1.2" stroke-linejoin="round" fill="#2a7de1" fill-opacity="0.12" /></g>
+<g clip-path="url(#clip3088_1)"><polygon points="442.38,204.39 463.02,59.91 318.54,39.27 297.90,183.75" stroke="#d1342f" stroke-width="1.4" stroke-linejoin="round" fill="#d1342f" fill-opacity="0.2" /></g>
+<g clip-path="url(#clip3088_1)"><polygon points="329.55,373.64 443.18,203.18 727.27,487.27 670.45,89.55 272.73,32.73" stroke="#111111" stroke-width="1.6" stroke-linejoin="round" fill="none" /></g>
+<g clip-path="url(#clip3088_1)"><circle cx="329.55" cy="373.64" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
+<g clip-path="url(#clip3088_1)"><circle cx="443.18" cy="203.18" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
+<g clip-path="url(#clip3088_1)"><circle cx="727.27" cy="487.27" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
+<g clip-path="url(#clip3088_1)"><circle cx="670.45" cy="89.55" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
+<g clip-path="url(#clip3088_1)"><circle cx="272.73" cy="32.73" r="6.00" stroke="none" stroke-width="0" stroke-linejoin="round" fill="#111111" fill-opacity="1" /></g>
 </svg>
